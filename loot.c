@@ -16,7 +16,7 @@ typedef struct No {
     struct No* proximo;
 } No;
 
-// -------------------- VARIÁVEIS GLOBAIS --------------------
+// -------------------- VARIÃVEIS GLOBAIS --------------------
 
 #define MAX_ITENS 10
 Item mochilaVetor[MAX_ITENS];
@@ -27,11 +27,11 @@ No* mochilaLista = NULL;
 int comparacoesSequencial = 0;
 int comparacoesBinaria = 0;
 
-// -------------------- FUNÇÕES AUXILIARES --------------------
+// -------------------- FUNÃ‡Ã•ES AUXILIARES --------------------
 
 void trim(char* s) { size_t n = strlen(s); if (n > 0 && s[n - 1] == '\n') s[n - 1] = '\0'; }
 
-// -------------------- VERSÃO COM VETOR --------------------
+// -------------------- VERSÃƒO COM VETOR --------------------
 
 void inserirItemVetor() {
     if (totalVetor >= MAX_ITENS) { printf("Vetor cheio.\n"); return; }
@@ -52,7 +52,7 @@ void removerItemVetor() {
             totalVetor--; printf("Removido do vetor.\n"); return;
         }
     }
-    printf("Item não encontrado.\n");
+    printf("Item nÃ£o encontrado.\n");
 }
 
 void listarVetor() {
@@ -123,7 +123,7 @@ void removerItemLista() {
         }
         ant = p; p = p->proximo;
     }
-    printf("Item não encontrado.\n");
+    printf("Item nÃ£o encontrado.\n");
 }
 
 void listarLista() {
@@ -147,7 +147,7 @@ int buscarSequencialLista(const char* nome) {
 void menuVetor() {
     int op; char nome[30];
     do {
-        printf("\n--- Vetor ---\n1 Inserir\n2 Remover\n3 Listar\n4 Buscar Seq.\n5 Ordenar\n6 Buscar Binária\n0 Voltar\n> ");
+        printf("\n--- Vetor ---\n1 Inserir\n2 Remover\n3 Listar\n4 Buscar Seq.\n5 Ordenar\n6 Busca BinÃ¡ria\n0 Voltar\n> ");
         scanf("%d", &op); getchar();
         if (op == 1) inserirItemVetor();
         else if (op == 2) removerItemVetor();
@@ -155,13 +155,13 @@ void menuVetor() {
         else if (op == 4) {
             printf("Nome: "); fgets(nome, 30, stdin); trim(nome);
             int i = buscarSequencialVetor(nome);
-            printf("Comparações: %d | Resultado: %d\n", comparacoesSequencial, i);
+            printf("ComparaÃ§Ãµes: %d | Resultado: %d\n", comparacoesSequencial, i);
         }
         else if (op == 5) ordenarVetor();
         else if (op == 6) {
             printf("Nome: "); fgets(nome, 30, stdin); trim(nome);
             int i = buscarBinariaVetor(nome);
-            printf("Comparações: %d | Resultado: %d\n", comparacoesBinaria, i);
+            printf("ComparaÃ§Ãµes: %d | Resultado: %d\n", comparacoesBinaria, i);
         }
     } while (op != 0);
 }
@@ -177,7 +177,7 @@ void menuLista() {
         else if (op == 4) {
             printf("Nome: "); fgets(nome, 30, stdin); trim(nome);
             int ok = buscarSequencialLista(nome);
-            printf("Comparações: %d | Encontrado: %d\n", comparacoesSequencial, ok);
+            printf("ComparaÃ§Ãµes: %d | Encontrado: %d\n", comparacoesSequencial, ok);
         }
     } while (op != 0);
 }
